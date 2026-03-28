@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disaster Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loginPage">
+
+  <form>
+    <h2>🌐 Disaster Management System</h2>
+
+    <input type="text" id="username" placeholder="Enter Email"><br>
+    <input type="password" id="password" placeholder="Enter Password"><br>
+
+    <button type="button" onclick="login()">Login</button>
+
+    <p>New user? 
+      <a href="#" onclick="showRegister()">Register here</a>
+    </p>
+  </form>
+
+</div>
+
+<!-- REGISTER PAGE -->
+<div id="registerPage" style="display:none;">
+  <h2>📝 Registration Form</h2>
+
+  <input type="text" id="regName" placeholder="Full Name"><br>
+  <input type="number" id="regAge" placeholder="Age"><br>
+
+  <select id="regRole">
+    <option value="user">User</option>
+    <option value="volunteer">Volunteer</option>
+  </select><br>
+
+  <input type="text" id="regAddress" placeholder="Address"><br>
+  <input type="text" id="regAddress2" placeholder="Optional Address"><br>
+  <input type="email" id="regEmail" placeholder="Email"><br>
+  <input type="password" id="regPass" placeholder="Password"><br>
+
+  <button onclick="register()">Register</button>
+
+  <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+</div>
+
+<!-- USER PAGE -->
+<div id="mainPage" style="display:none;">
+  <h1>🚨 Disaster Alert System</h1>
+
+  <button onclick="showAlert()">🔔 Alerts</button>
+  <button onclick="findHelp()">📍 Find Help</button>
+  <button onclick="sendSOS()" class="sos">🆘 Emergency</button>
+
+  <div id="output"></div>
+
+  <div id="contacts" style="display:none;">
+    <p>Police: 100 | Ambulance: 102 | Fire: 101</p>
+  </div>
+
+  <iframe src="https://www.google.com/maps?q=hospital&output=embed"></iframe>
+</div>
+
+<!-- VOLUNTEER PAGE -->
+<div id="volunteerPage" style="display:none;">
+  <h1>🤝 Volunteer Dashboard</h1>
+
+  <button onclick="helpRequest()">View Help Requests</button>
+  <div id="volOutput"></div>
+</div>
+
+<!-- ADMIN PAGE -->
+<div id="adminPage" style="display:none;">
+  <h1>👑 Admin Panel</h1>
+
+  <button onclick="viewUsers()">View Users</button>
+  <div id="adminOutput"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
